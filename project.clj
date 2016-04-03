@@ -1,5 +1,5 @@
 (defproject umi "0.1.2-SNAPSHOT"
-  :description "a semantic web reasoning system"
+  :description "a semantic web reasoning lib"
   :license {:name "GNU General Public License"
             :url "http://www.gnu.org/licenses/"}
   :dependencies [[com.hermit-reasoner/org.semanticweb.hermit "1.3.8.4"]
