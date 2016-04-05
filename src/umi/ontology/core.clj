@@ -2,7 +2,7 @@
   (:require [umi.ontology.util :as util])
   (:import (org.semanticweb.owlapi.apibinding OWLManager)
            (org.semanticweb.owlapi.io StringDocumentSource)
-           (org.semanticweb.owlapi.model OWLOntologyManager)))
+           (org.semanticweb.owlapi.model OWLOntology)))
 
 (defn- load-ontology
   [datasource]
@@ -18,3 +18,7 @@
   [uri-to-ontology]
   (let [datasource (util/uri->iri uri-to-ontology)]
     (load-ontology datasource)))
+
+(defn get-all-axiom
+  [ontology]
+  (set (.. ontology (getAxioms))))
