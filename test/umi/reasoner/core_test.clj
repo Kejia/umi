@@ -43,4 +43,5 @@
     (is (= 3
            (count unsat-class)))
     (is (unsat-class (-> (reasoner/get-bottom ontology-test/pizza-ontology)
-                         util/owl-node->set first)))))
+                         util/owl-node->set
+                         first)))))
