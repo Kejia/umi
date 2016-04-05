@@ -29,18 +29,24 @@
   [class-exp ontology]
   (-> (factory/produce ontology)
       (.getEquivalentClasses class-exp)
-      ontology-util/owl-nodeset->set))
+      ontology-util/owl-node->set))
 
 (defn get-super-classes
   [class-exp ontology & {:keys [directed]
                          :or {directed false}}]
   (-> (factory/produce ontology)
       (.getSuperClasses class-exp directed)
-      ontology-util/owl-node->set))
+      ontology-util/owl-nodeset->set))
 
 (defn get-sub-classes
   [class-exp ontology & {:keys [directed]
                          :or {directed false}}]
   (-> (factory/produce ontology)
       (.getSubClasses class-exp directed)
+      ontology-util/owl-nodeset->set))
+
+(defn get-unsatisfiable-classes
+  [ontology]
+  (-> (factory/produce ontology)
+      (.getUnsatisfiableClasses)
       ontology-util/owl-node->set))

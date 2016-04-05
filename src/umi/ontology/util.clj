@@ -12,15 +12,15 @@
   [uri]
   (OWLClassImpl. (uri->iri uri)))
 
+(defn owl-nodeset->set
+  [owl-nodeset]
+  (-> owl-nodeset
+      (.getFlattened)
+      (set)))
+
 (defn owl-node->set
   [owl-node]
   (-> owl-node
-      (.getFlattened)
-      set))
-
-(defn owl-nodeset->set
-  [owl-node]
-  (-> owl-node
       (.getEntities)
-      set))
+      (set)))
 
