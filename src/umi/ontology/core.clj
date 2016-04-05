@@ -1,4 +1,4 @@
-(ns umi.ontology.owl
+(ns umi.ontology.core
   (:require [umi.ontology.util :as util])
   (:import (org.semanticweb.owlapi.apibinding OWLManager)
            (org.semanticweb.owlapi.io StringDocumentSource)
