@@ -3,11 +3,11 @@
             [umi.ontology.util :as util]
             [clojure.test :refer :all]))
 
-(def pizza-uri "http://protege.stanford.edu/ontologies/pizza/pizza.owl")
-(def pizza-ontology (ontology/load-ontology-from-uri pizza-uri))
-(def class-americanhot-uri "http://www.co-ode.org/ontologies/pizza/pizza.owl#AmericanHot")
-(def class-americanhot (util/uri->class-exp class-americanhot-uri))
-(def class-americanhot-id "http://www.co-ode.org/ontologies/pizza/pizza.owl#AmericanHot")
+(defonce pizza-uri "http://protege.stanford.edu/ontologies/pizza/pizza.owl")
+(defonce pizza-ontology (ontology/load-ontology-from-uri pizza-uri))
+(defonce class-americanhot-uri "http://www.co-ode.org/ontologies/pizza/pizza.owl#AmericanHot")
+(defonce class-americanhot (util/uri->class-exp class-americanhot-uri))
+(defonce class-americanhot-id "http://www.co-ode.org/ontologies/pizza/pizza.owl#AmericanHot")
 
 (deftest load-ontology-from-uri-test
   (is (= 940
