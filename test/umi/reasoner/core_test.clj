@@ -45,3 +45,8 @@
     (is (unsat-class (-> (reasoner/get-bottom ontology-test/pizza-ontology)
                          util/owl-node->set
                          first)))))
+
+(deftest get-disjoint-classes-test
+  (let [disjoint-classes (reasoner/get-disjoint-classes ontology-test/class-americanhot ontology-test/pizza-ontology)]
+    (is (= 86 (count disjoint-classes)))
+    (is (disjoint-classes (util/uri->class-exp "http://www.co-ode.org/ontologies/pizza/pizza.owl#GreenPepperTopping")))))

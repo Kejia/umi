@@ -50,3 +50,9 @@
   (-> (factory/produce ontology)
       (.getUnsatisfiableClasses)
       ontology-util/owl-node->set))
+
+(defn get-disjoint-classes
+  [class-exp ontology]
+  (-> (factory/produce ontology)
+      (.getDisjointClasses class-exp)
+      ontology-util/owl-nodeset->set))
