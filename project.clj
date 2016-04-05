@@ -1,4 +1,4 @@
-(defproject umi "0.1.2-SNAPSHOT"
+(defproject umi "0.1.2"
   :description "a semantic web reasoning lib"
   :url "http://github.com/discretewater/umi"
   :license {:name "GNU General Public License"
