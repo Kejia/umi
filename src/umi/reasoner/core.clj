@@ -24,10 +24,6 @@
   [owl-axiom ontology]
   (.isEntailed (factory/produce ontology) owl-axiom))
 
-;; (defn sub-class-of
-;;   [sub sup ontology]
-;;   (.isSubClassOf (factory/produce ontology) sub sup))
-
 (defn get-equivalent-classes
   [class-exp ontology]
   (set (.getEntities (.getEquivalentClasses (factory/produce ontology) class-exp))))

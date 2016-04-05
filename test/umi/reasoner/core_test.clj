@@ -22,10 +22,10 @@
 (deftest get-bottom-test
   (is (.isBottomNode (reasoner/get-bottom (ontology/load-ontology-from-uri pizza-uri)))))
 
-;; (deftest sub-class-of-test
-;;   (is (reasoner/sub-class-of (reasoner/get-bottom (ontology/load-ontology-from-uri pizza-uri))
-;;                          (reasoner/get-top (ontology/load-ontology-from-uri pizza-uri))
-;;                          pizza-ontology)))
+(deftest entailed?-test
+  (is (every? identity
+              (pmap #(reasoner/entailed? % pizza-ontology)
+                    (set (ontology/get-all-axiom pizza-ontology))))))
 
 (deftest get-equivalent-classes-test
   (let [equivalent-classes (reasoner/get-equivalent-classes class-americanhot pizza-ontology)]
