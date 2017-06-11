@@ -2,4 +2,5 @@
 [![Clojars Project](https://img.shields.io/clojars/v/umi.svg)](https://clojars.org/umi)
 
 # umi
-a clojure lib for semantic web owl reasoning
+
+This is a clojure lib for reasoning about semantic web owl ontologies, based on Hermit.
